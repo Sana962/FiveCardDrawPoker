@@ -30,6 +30,10 @@ hands[6] = "full-house"
 hands[7] = "four-of-a-kind"
 hands[8] = "straight-flush"
 
+var hand[5][3]char
+var hand[5][3]char
+var hand[5][3]char
+
 
 func main() {
 
