@@ -98,6 +98,42 @@ func FourThreeOfKindAndOnePair(a int) int
 	return 0;
 }
 
+/* Function implementation for Full house and two-pair */
+
+func FullHouseAndTwoPair(a,b int) int
+{
+	i , j , k int;
+
+	for i:= 0 ; i<=5-a-b ; i++
+	{
+		for j:=i+a ; i<=5-b ; j++
+		{
+			for k:=1 ; k<a ; k++
+			{
+				if play[i][0] != play [i+k][0]            /* check if the two card are same face value*/
+				{
+                    goto label2;
+				}
+
+			for k:=1 ; k<b ; k++
+			{
+				if play[j][0] != play[j+k][0]           /*check for next two card if they have same face value*/
+				{
+                    goto label2;
+				}
+			}
+
+			return 1;                                  /* if hand have two pair return 1 */
+	label2:
+			}
+		}
+
+		return 0;
+	}
+
+
+}
+
 
 func main() {
 
