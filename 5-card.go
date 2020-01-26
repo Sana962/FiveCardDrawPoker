@@ -20,15 +20,15 @@ const
 /* Declration and initialization of a pointer array */
 var *hands[] char
 
-hands[0] = "highest-card"
-hands[1] = "one-pair"
-hands[2] = "two-pairs"
-hands[3] = "three-of-a-kind"
-hands[4] = "straight"
-hands[5] = "flush"
-hands[6] = "full-house"
-hands[7] = "four-of-a-kind"
-hands[8] = "straight-flush"
+"highest-card"
+"one-pair"
+"two-pairs"
+"three-of-a-kind"
+"straight"
+"flush"
+"full-house"
+"four-of-a-kind"
+"straight-flush"
 
 /* declaration of arrays of hand card , deck and card which is currently in play */
 var hand[5][3]char
@@ -177,6 +177,54 @@ func selection() int
 		return HIGHEST_CARD
 	}
 }
-func main() {
+
+/* Main function */
+func main()
+{
+	i j , k, best int
+
+	for 1
+	{
+		fmt.Print("Enter Cards")               /* get value from user */
+		if fmt.Scanf("%s %s %s %s %s %s %s %s %s %s", hand[0], hand[1], hand[2],hand[3],hand[4],deck[0],decl[1],deck[2],deck[3],deck[4] !=10)
+		{
+			return 0;
+		}   
+		best =0;
+
+		for i:=0 ; i<32 ; i++                 /* 5 card make combination of 32 e.g 2^5 */
+		{
+			k=0;
+			for j:=0 ; j<5 ; j++
+			{
+				if i & 1<<j
+				{
+					strcpy(play[j], hand[j]);
+				}
+				else 
+				{
+					strcpy(play[j] , deck[k++]);
+				}
+			}
+			j = selection();
+			if j>best
+			{
+				best= j
+			}
+		}
+
+		fmt.printf("Hand:");
+		for i:=0; i<5; i++
+		{
+			fmt.printf(" %s", hand[i]);
+		}
+		fmt.printf(" Deck:");
+		for i:=0; i<5; i++
+		{
+			fmt.printf(" %s", deck[i]);
+		}
+		fmt.printf(" Best hand: %s\n", hands[best]);
+
+	}
 
 }
