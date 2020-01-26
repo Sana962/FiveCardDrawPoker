@@ -130,11 +130,53 @@ func FullHouseAndTwoPair(a,b int) int
 
 		return 0;
 	}
-
-
 }
 
+func compar (a* , b* const)int
+{
+	return *(char *)a - *(char*)b;
+}
 
+/* Selection function for highest hand value */
+func selection() int
+{
+	if straight() && flush()
+	{
+		return STRAIGHT_FLUSH;
+	}
+	else if kind(4)
+	{
+		return FOUR_OF_A_KIND;
+	}
+	else if FullHouseAndTwoPair(2,3) || FullHouseAndTwoPair (3,2)
+	{
+		return FULL_HOUSE;
+	}
+	else if Flush()
+	{
+		return FLUSH;
+	}
+	else if straight()
+	{
+		return STRAIGHT;
+	}
+	else if kind(3)
+	{
+		return THREE_OF_A_KIND
+	}
+	else if FourThreeOfKindAndOnePair(2,2)
+	{
+		return TWO_PAIRS;
+	}
+	else if kind(2)
+	{
+		return ONE_PAIR
+	}
+	else 
+	{
+		return HIGHEST_CARD
+	}
+}
 func main() {
 
 }
