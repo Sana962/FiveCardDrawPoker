@@ -65,11 +65,36 @@ func Straight() int
 	   play[0][0]=='8' && play[1][0]=='9' && play[2][0]=='J' && play[3][0]=='Q' && play[4][0]=='T' ||
 	   play[0][0]=='9' && play[1][0]=='J' && play[2][0]=='K' && play[3][0]=='Q' && play[4][0]=='T' ||
 	   play[0][0]=='A' && play[1][0]=='J' && play[2][0]=='K' && play[3][0]=='Q' && play[4][0]=='T'
-	(
+	{
 		return 1;       /* if player have card of same sequence but of different suit then user has straight hand*/
 
-	)
+	}
 
+	return 0;
+}
+
+/* Function implementation for Four-of-kind , Three-of-kind , One.pair hand values */
+
+func FourThreeOfKindAndOnePair(a int) int
+{
+	i , j int
+
+	for i:=0 ; i<=5 ; i++
+	{
+		for j:=1 ; j<a ; j++
+		{
+			if play[1][0] != play[i+j][0]          /* if selected card is not equal to next card in line then jump to label 1*/
+			{
+                goto label1;
+			}
+		}
+
+		return 1;
+
+	label1:
+
+	}
+	
 	return 0;
 }
 
