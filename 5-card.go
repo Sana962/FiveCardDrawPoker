@@ -49,11 +49,29 @@ func Flush() int
 		   return 0;
 	   }
    }
-   return 1;                        /* return 1 if all card belong to same suit
+   return 1;                        /* return 1 if all card belong to same suit */
 }
 
+/* Function for hand value Straight*/
+func Straight() int
+{
+	if play[0][0]=='2' && play[1][0]=='3' && play[2][0]=='4' && play[3][0]=='5' && play[4][0]=='A' ||
+	   play[0][0]=='2' && play[1][0]=='3' && play[2][0]=='4' && play[3][0]=='5' && play[4][0]=='6' ||
+	   play[0][0]=='3' && play[1][0]=='4' && play[2][0]=='5' && play[3][0]=='6' && play[4][0]=='7' ||
+	   play[0][0]=='4' && play[1][0]=='5' && play[2][0]=='6' && play[3][0]=='7' && play[4][0]=='8' ||
+	   play[0][0]=='5' && play[1][0]=='6' && play[2][0]=='7' && play[3][0]=='8' && play[4][0]=='9' ||
+	   play[0][0]=='6' && play[1][0]=='7' && play[2][0]=='8' && play[3][0]=='9' && play[4][0]=='T' ||
+	   play[0][0]=='7' && play[1][0]=='8' && play[2][0]=='9' && play[3][0]=='J' && play[4][0]=='T' ||
+	   play[0][0]=='8' && play[1][0]=='9' && play[2][0]=='J' && play[3][0]=='Q' && play[4][0]=='T' ||
+	   play[0][0]=='9' && play[1][0]=='J' && play[2][0]=='K' && play[3][0]=='Q' && play[4][0]=='T' ||
+	   play[0][0]=='A' && play[1][0]=='J' && play[2][0]=='K' && play[3][0]=='Q' && play[4][0]=='T'
+	(
+		return 1;       /* if player have card of same sequence but of different suit then user has straight hand*/
 
+	)
 
+	return 0;
+}
 
 
 func main() {
